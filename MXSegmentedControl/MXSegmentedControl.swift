@@ -98,8 +98,8 @@ import UIKit
     }
     
     /// The segmented control's indicator.
-    let indicator = MXIndicator()
-    
+    public let indicator = MXIndicator()
+
     /// The segmented control's separators.
     public internal(set) var separators: Separators {
         get { return contentView.separators }
