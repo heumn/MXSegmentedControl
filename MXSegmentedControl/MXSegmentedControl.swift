@@ -401,7 +401,7 @@ extension MXSegmentedControl {
     }
     
     @objc private func select(segment: MXSegment) {
-        if let index = contentView.segments.index(of: segment) {
+        if let index = contentView.segments.firstIndex(of: segment) {
             select(index: index, animated: true)
         }
     }
@@ -481,7 +481,7 @@ extension MXSegmentedControl {
     
     class ContentView: UIView {
         
-        internal(set) var segments = [MXSegment]()
+        var segments = [MXSegment]()
         
         var separators = Separators()
         
@@ -505,7 +505,7 @@ extension MXSegmentedControl {
         }
         
         func remove(_ segment: MXSegment) {
-            guard var index = segments.index(of: segment) else {
+            guard var index = segments.firstIndex(of: segment) else {
                 return
             }
             
